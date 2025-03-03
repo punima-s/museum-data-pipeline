@@ -2,6 +2,7 @@
 This project builds an data pipeline for batch data stored in S3 and real-time stream data in Kafka.
 The data pipeline for batch data runs from calling the ```pipeline.py```.
 ![batch data pipeline ARD](batch_data_pipeline.png)
+
 The data pipeline for real-time stream data runs from calling the ```consumer.py```.
 ![stream data pipeline ARD](stream_data_pipeline.png)
 
@@ -14,10 +15,13 @@ The kiosks also feature 2 other options: 'Assistance' and 'Emergency'
 ### Files from S3:
 ***Historical data in csv files from each exhibition***
 Each csv files have the same columns: 
-```at``` refers to the date & time of the visitor interaction
-```site``` refers to the unique ID of a specific exhibit
-```val``` is a number representing what button the visitor pushed. Values from ```0``` to ```4``` are ratings, with ```4``` representing the highest rating
-A value of ```-1``` means that one of the other buttons ("assistance" or "emergency") has been pressed
+
+```at``` refers to the date & time of the visitor interaction.
+
+```site``` refers to the unique ID of a specific exhibit.
+
+```val``` is a number representing what button the visitor pushed. Values from ```0``` to ```4``` are ratings, with ```4``` representing the highest rating. A value of ```-1``` means that one of the other buttons ("assistance" or "emergency") has been pressed.
+
 ```type``` only has a value when the ```val``` field is ```-1```; ```0``` represents the "assistance" button, ```1``` the "emergency"
 
 While ratings are stored numerically, each one does have an associated description:
